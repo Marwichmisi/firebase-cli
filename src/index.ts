@@ -2,7 +2,11 @@
 import { Command } from "commander";
 import { globalFlags } from "./lib/config.js";
 import { authCommand } from "./commands/auth.js";
-import { exampleResource } from "./resources/example.js";
+import { projectsResource } from "./resources/projects.js";
+import { webAppsResource } from "./resources/webApps.js";
+import { androidAppsResource } from "./resources/androidApps.js";
+import { iosAppsResource } from "./resources/iosApps.js";
+import { operationsResource } from "./resources/operations.js";
 
 const program = new Command();
 
@@ -27,7 +31,11 @@ program
 // Built-in commands
 program.addCommand(authCommand);
 
-// Resources (add yours here)
-program.addCommand(exampleResource);
+// Firebase resources
+program.addCommand(projectsResource);
+program.addCommand(webAppsResource);
+program.addCommand(androidAppsResource);
+program.addCommand(iosAppsResource);
+program.addCommand(operationsResource);
 
 program.parse();
